@@ -33,6 +33,10 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'discoverApp.apps.DiscoverappConfig',
+    'Accounts.apps.AccountsConfig',
+    'ConnexionSystem.apps.ConnexionsystemConfig',
+    'Contacts.apps.ContactsConfig',
+    'ScrollMusic.apps.ScrollmusicConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -56,7 +60,7 @@ ROOT_URLCONF = 'DjangoDiscoverApp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
