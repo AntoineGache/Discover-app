@@ -3,14 +3,12 @@ from django.shortcuts import render
 
 # Create your views here.
 
-def signIn(request):
-    html = "<html><body>sigIn</body></html>"
-    return HttpResponse(html)
+def signIn(request):    
+    return render(request, 'signin/signin.html')
 
 def signOut(requst):
     html = "<html><body>sigOut</body></html>"
     return HttpResponse(html)
 
 def register(request):
-    html = "<html><body>Register</body></html>"
-    return HttpResponse(html)
+    return render(request, 'register/register.html')
