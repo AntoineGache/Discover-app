@@ -1,6 +1,7 @@
 from django.urls import include, path
 from . import views
 
+app_name="Contact"
 urlpatterns = [
-    path('contact/', views.contact, name='contact'),
+    path('contactpage/', views.contact, name='contactPage'),
 ]

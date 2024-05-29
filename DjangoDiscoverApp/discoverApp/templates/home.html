@@ -7,14 +7,22 @@
 
     <body>
         <div class="navbar">
+            {% include './components/navbar.html' %}
         </div>
         <div class="body-content">
             {% block content %} {% endblock %}
+        </div>
+        <div class="Followed">
+
+        </div>
+
+
+        <div class="body-content2">
             {% if user.is_authenticated %}
             <div>
                 {{ user.get_username }}
                 <br>
-                <form action="{% url 'logout' %}" id="logout" method="POST">
+                <form action="{% url 'ConnexionSystem:signout' %}" id="logout" method="POST">
                     {% csrf_token %}
                     <button type="submit">Logout</button>
                 </form>

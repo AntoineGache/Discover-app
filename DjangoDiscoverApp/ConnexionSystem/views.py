@@ -21,7 +21,7 @@ def signIn(request):
             return HttpResponseRedirect(reverse('home'))
         else:
             messages.error(request, f'invalid credentials')
-            return HttpResponseRedirect(reverse('signin'))
+            return HttpResponseRedirect(reverse('ConnexionSystem:signin'))
     else:
         return render(request, 'signin/signin.html')
 
@@ -30,7 +30,7 @@ def signOut(request):
     if request.method == 'POST':
         auth.logout(request)
         messages.success(request, f'logged out from websites..')
-        return HttpResponseRedirect(reverse('login'))
+        return HttpResponseRedirect(reverse('ConnexionSystem:signin'))
 
 def register(request):
     if request.method == 'POST':
@@ -42,18 +42,18 @@ def register(request):
         if password1 == password2:
             if User.objects.filter(username=username).exists():
                 messages.error(request, f'Username exists! try another usernmae...')
-                return HttpResponseRedirect(reverse('register'))
+                return HttpResponseRedirect(reverse('ConnexionSystem:register'))
             else:
                 if User.objects.filter(email=email).exists():
                     messages.error(request, f'Email is already taken ! try another one')
-                    return HttpResponseRedirect(reverse('register'))
+                    return HttpResponseRedirect(reverse('ConnexionSystem:register'))
                 else:
                     user = User.objects.create_user(username=username, email=email, password=password1)
                     user.save()
                     messages.success(request, f'Account added successfully !..')
-                    return HttpResponseRedirect(reverse('signin'))
+                    return HttpResponseRedirect(reverse('ConnexionSystem:signin'))
         else:
             messages.error(request, f'Password did not matched !..')
-            return HttpResponseRedirect(reverse('register'))
+            return HttpResponseRedirect(reverse('ConnexionSystem:register'))
     else:
         return render(request, 'register/register.html')
