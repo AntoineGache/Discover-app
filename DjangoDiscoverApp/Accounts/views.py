@@ -4,5 +4,4 @@ from django.http import HttpResponse
 # Create your views here.
 
 def accounts(request):
-    html = "<html><body>Accounts</body></html>"
-    return HttpResponse(html)
+    return render(request, 'userspace.html')
