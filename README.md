@@ -18,13 +18,17 @@ Launch databse:
 
 * Exécuter cette commande: "docker compose up -d"
 
+Create the database :
+
+* Exec this SQL command on our database: "CREATE DATABASE discoverApp"
+
 Shutdown database:
 
 * docker compose down
 
 Database settings:
 
-ip: localhost
-user: root
-password: root_password
-port : 6000
+* ip: localhost
+* user: root
+* password: root_password
+* port : 6000
