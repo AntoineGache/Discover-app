@@ -1,0 +1,8 @@
+:root{
+    --white: #FFFFFF;
+}
+
+body {
+    background: var(--white);
+    border-radius: 0.32vw;
+}

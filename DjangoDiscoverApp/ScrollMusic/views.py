@@ -5,3 +5,6 @@ from django.http import HttpResponse
 
 def scrollMusic(request):
     return render(request, 'scrollpage.html')
+
+def displayPublication(request):
+    return render(request, 'publication.html')
