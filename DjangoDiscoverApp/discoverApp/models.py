@@ -1,8 +1,6 @@
 from django.db import models
 
 # Create your models here.
-from django.db import models
-
 class Utilisateur(models.Model):
     id = models.PositiveIntegerField(primary_key=True)
     email = models.CharField(max_length=255)
@@ -24,8 +22,8 @@ class Publication(models.Model):
 
 class Message(models.Model):
     id = models.PositiveIntegerField(primary_key=True)
-    envoyeur = models.ForeignKey(Utilisateur, on_delete=models.CASCADE)
-    receveur = models.ForeignKey(Utilisateur, on_delete=models.CASCADE)
+    envoyeur = models.ForeignKey(Utilisateur, related_name='envoyeur', on_delete=models.CASCADE)
+    receveur = models.ForeignKey(Utilisateur, related_name='receveur', on_delete=models.CASCADE)
     date = models.DateField()
     text = models.CharField(max_length=255)
 
@@ -47,6 +45,6 @@ class Like(models.Model):
     utilisateur = models.ForeignKey(Utilisateur, on_delete=models.CASCADE)
 
 class Abonnement(models.Model):
-    abonne = models.ForeignKey(Utilisateur, on_delete=models.CASCADE)
-    abonnement = models.ForeignKey(Utilisateur, on_delete=models.CASCADE)
+    abonne = models.ForeignKey(Utilisateur, related_name='abonne', on_delete=models.CASCADE)
+    abonnement = models.ForeignKey(Utilisateur, related_name='abonnement', on_delete=models.CASCADE)
 
