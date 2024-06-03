@@ -1,0 +1,14 @@
+:root{
+    --white: #FFFFFF;
+    --red: #FF5500;
+}
+
+body {
+    background: var(--white);
+    border-radius: 0.32vw;
+}
+
+.publication {
+   background: var(--red);
+    border-radius: 0.32vw;
+}
