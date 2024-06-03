@@ -1,13 +1,22 @@
-{% extends "postfeed.html" %}
-
 {% block title %} Publication {% endblock %}
 
 {% block content %}
     <h1>Contenu de la publication</h1>
-    <img src="../assets/profile_pictures/profil.png" alt="Image de profil de {{ user.get_username }}">
-    <p class="username">Mozart</p>
-    <p class="smalltext">à 18h04</p>
-    <p class="description">Le nouvel album est disponible, vous pouvez l'écouter à https://discover-app.com/test/nouvel-album</p>
-    <p class="title">Nouvelle musique</p>
-    <img src="../assets/icons/player-play.svg" alt="Commencer/Reprendre la musique">
+    <div class="publication">
+        <div class="top">
+            <img src="../assets/profile_pictures/profil.png" alt="Image de profil de {{ user.get_username }}">
+            <p class="username">Mozart</p>
+            <p class="smalltext">à 18h04</p>
+        </div>
+        <div class="content">
+            <p class="description">Le nouvel album est disponible, vous pouvez l'écouter à https://discover-app.com/test/nouvel-album</p>
+            <p class="title">Nouvelle musique</p>
+            <img src="../assets/icons/player-play.svg" alt="Commencer/Reprendre la musique">
+        </div>
+        <div class="interaction">
+            <img src="../assets/icons/heart.svg" alt="Likes">
+            <img src="../assets/icons/message.svg" alt="Commentaires">
+            <img src="../assets/icons/share.svg" alt="Partages">
+        </div>
+    </div>
 {% endblock %}
