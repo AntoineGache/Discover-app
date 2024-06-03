@@ -1,37 +1,28 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8"/>
         <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'global.css' %}">
+        <link rel="stylesheet" href="{% static 'home.css' %} ">
     </head>
-
     <body>
-        <div class="navbar">
-            {% include './components/navbar.html' %}
-        </div>
-        <div class="body-content">
-            {% block content %} {% endblock %}
-        </div>
-        <div class="Followed">
-
-        </div>
-
-
-        <div class="body-content2">
-            {% if user.is_authenticated %}
-            <div>
-                {{ user.get_username }}
-                <br>
-                <form action="{% url 'ConnexionSystem:signout' %}" id="logout" method="POST">
-                    {% csrf_token %}
-                    <button type="submit">Logout</button>
-                </form>
+        <div class="main">
+            <div class="navbar">
+                <div class="logo"">
+                    <p class="img-text">
+                        <img class="logo-image" src="{% static 'vinyl.jpeg' %}">
+                        DISCOVER
+                    </p>
+                </div>
+                <div class="navbar-component">
+                    {% include './components/navbar.html' %}
+                </div>
             </div>
-            {% endif %}
-            <footer style="position: absolute; bottom: 0; width: 100%;">
-                <hr />
-                <p>ESEO - Campus Paris &copy; 2024</p>
-            </footer>
+            <div class="body-content">
+                {% block content %} {% endblock %}
+            </div>
         </div>
     </body>
 </html>

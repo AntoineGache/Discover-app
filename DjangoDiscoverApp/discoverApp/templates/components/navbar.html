@@ -1,12 +1,44 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'navbar.css' %} ">
 <div class="links">
-    <a href="{% url 'home' %}">Accueil</a>
-    <br />
-    <a href="{% url 'Contact:contactPage' %}">Contact</a>
-    <br />
-    <a href="{% url 'notifications' %}">Notifications</a>
-    <br />
-    <a href="{% url 'parameters' %}">Paramètres</a>
+    
     <div>
-        <a href="{% url 'Account:account' %}">Account</a>
+        <div class="url">
+            <a href="{% url 'home' %}">Accueil</a>
+        </div>
+
+        <br />
+
+        <div class="url">
+            <a href="{% url 'Contact:contactPage' %}">Contact</a>
+        </div>
+
+        <br />
+
+        <div class="url">
+            <a href="{% url 'notifications' %}">Notifications</a>
+        </div>
+
+        <br />
+
+        <div class="url">
+            <a href="{% url 'parameters' %}">Paramètres</a>
+        </div>
+
+        <br />
+
+        <div class="url">
+            <a href="{% url 'Account:account' %}">Account</a>
+        </div>
+    </div>
+    <div>
+        {% if user.is_authenticated %}
+        <div>
+            <form action="{% url 'ConnexionSystem:signout' %}" id="logout" method="POST">
+                {% csrf_token %}
+                {{ user.get_username }} <button type="submit">Logout</button>
+            </form>
+        </div>
+        {% endif %}
     </div>
 </div>

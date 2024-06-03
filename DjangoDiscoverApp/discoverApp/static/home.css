@@ -1,0 +1,48 @@
+@import url('global.css');
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    margin: 0;
+    height: 100%;
+}
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo-image {
+    width : 40%;
+    max-width : 200px;
+    max-height : 150px;
+}
+
+.navbar {
+    display: inline;
+    width: 20%;
+}
+.navbar-component {
+    display: flex;
+    justify-content: center;
+    height: 80%;
+}
+
+.body-content {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    background-color: var(--background-grey);
+}
+
+.img-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #36E285;
+    font-size: larger;
+}
