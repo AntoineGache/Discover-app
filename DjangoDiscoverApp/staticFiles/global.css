@@ -1,9 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
-:root {
+:root{
+    --primary: #2EB897;
+    --secondary: #36E285;
+    --black1: #0F2419;
+    --black2: #2B3B32;
+    --black3: #45544C;
+    --primary-light: #EBFAF6;
+    --secondary-light: #E9FCF1;
+    --grey1: #F0F5F2;
+    --grey2: #D3DED8;
+    --grey3: #ABBAB2;
+    --primary-dark: #12A17F;
+    --secondary-dark: #09AA53;
+    --white: #FFFFFF;
+    --red: #FF5500;
     --background-grey: #F0F5F2;
 }
 
-
 * {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: "Plus Jakarta Sans", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }

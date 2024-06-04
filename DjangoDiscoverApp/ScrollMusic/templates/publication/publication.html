@@ -1,22 +1,106 @@
-{% block title %} Publication {% endblock %}
+{% load static %}
 
+<link rel="stylesheet" href="{% static 'publication.css' %} ">
 {% block content %}
-    <h1>Contenu de la publication</h1>
     <div class="publication">
         <div class="top">
-            <img src="../assets/profile_pictures/profil.png" alt="Image de profil de {{ user.get_username }}">
-            <p class="username">Mozart</p>
-            <p class="smalltext">à 18h04</p>
+            <img class="profile_picture" src="{% static 'assets/profile_pictures/images.png' %}" alt="Image de profil de {{ user.get_username }}">
+            <div class="info">
+                <p class="username">Test</p>
+                <p class="smalltext">à 18h04</p>
+            </div>
+            <div style="flex-grow: 1"></div>
+            <img class="dots" src="{% static 'assets/icons/dots.svg' %}" alt="Actions">
         </div>
         <div class="content">
             <p class="description">Le nouvel album est disponible, vous pouvez l'écouter à https://discover-app.com/test/nouvel-album</p>
             <p class="title">Nouvelle musique</p>
-            <img src="../assets/icons/player-play.svg" alt="Commencer/Reprendre la musique">
+            <div class="player">
+                <div class="button">
+                    <img src="{% static 'assets/icons/player-play.svg' %}" alt="Commencer/Reprendre la musique">
+                </div>
+            </div>
         </div>
         <div class="interaction">
-            <img src="../assets/icons/heart.svg" alt="Likes">
-            <img src="../assets/icons/message.svg" alt="Commentaires">
-            <img src="../assets/icons/share.svg" alt="Partages">
+            <div class="likes">
+                <img src="{% static 'assets/icons/heart.svg' %}" alt="Likes">
+                <p>741</p>
+            </div>
+            <div class="commentaires">
+                <img src="{% static 'assets/icons/message.svg' %}" alt="Commentaires">
+                <p>36</p>
+            </div>
+            <div class="share">
+                <img src="{% static 'assets/icons/share.svg' %}" alt="Partages">
+            </div>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="top">
+            <img class="profile_picture" src="{% static 'assets/profile_pictures/images.png' %}" alt="Image de profil de {{ user.get_username }}">
+            <div class="info">
+                <p class="username">Test</p>
+                <p class="smalltext">à 18h04</p>
+            </div>
+            <div style="flex-grow: 1"></div>
+            <img class="dots" src="{% static 'assets/icons/dots.svg' %}" alt="Actions">
+        </div>
+        <div class="content">
+            <p class="description">Le nouvel album est disponible, vous pouvez l'écouter à https://discover-app.com/test/nouvel-album</p>
+            <p class="title">Nouvelle musique</p>
+            <div class="player">
+                <div class="button">
+                    <img src="{% static 'assets/icons/player-play.svg' %}" alt="Commencer/Reprendre la musique">
+                </div>
+            </div>
+        </div>
+        <div class="interaction">
+            <div class="likes">
+                <img src="{% static 'assets/icons/heart.svg' %}" alt="Likes">
+                <p>741</p>
+            </div>
+            <div class="commentaires">
+                <img src="{% static 'assets/icons/message.svg' %}" alt="Commentaires">
+                <p>36</p>
+            </div>
+            <div class="share">
+                <img src="{% static 'assets/icons/share.svg' %}" alt="Partages">
+            </div>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="top">
+            <img class="profile_picture" src="{% static 'assets/profile_pictures/images.png' %}" alt="Image de profil de {{ user.get_username }}">
+            <div class="info">
+                <p class="username">Test</p>
+                <p class="smalltext">à 18h04</p>
+            </div>
+            <div style="flex-grow: 1"></div>
+            <img class="dots" src="{% static 'assets/icons/dots.svg' %}" alt="Actions">
+        </div>
+        <div class="content">
+            <p class="description">Le nouvel album est disponible, vous pouvez l'écouter à https://discover-app.com/test/nouvel-album</p>
+            <p class="title">Nouvelle musique</p>
+            <div class="player">
+                <div class="button">
+                    <img src="{% static 'assets/icons/player-play.svg' %}" alt="Commencer/Reprendre la musique">
+                </div>
+            </div>
+        </div>
+        <div class="interaction">
+            <div class="likes">
+                <img src="{% static 'assets/icons/heart.svg' %}" alt="Likes">
+                <p>741</p>
+            </div>
+            <div class="commentaires">
+                <img src="{% static 'assets/icons/message.svg' %}" alt="Commentaires">
+                <p>36</p>
+            </div>
+            <div class="share">
+                <img src="{% static 'assets/icons/share.svg' %}" alt="Partages">
+            </div>
         </div>
     </div>
 {% endblock %}
