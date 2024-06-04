@@ -1,0 +1,59 @@
+@startuml
+package Use_case_diagram {
+left to right direction
+
+actor :Utilisateur:
+actor :Administrateur:
+
+rectangle Discover-app {
+(Écouter de la musique) as uc1
+(Mettre en pause) as uc2
+(Écouter) as uc3
+(Avancer le temps) as uc4
+(Consulter les publications) as uc22
+(Mettre un commentaire) as uc5
+(Mettre un "j'aime") as uc6
+(Partager une publication) as uc7
+(Voir ses notifications) as uc8
+(Modifier ses paramètres/profil) as uc9
+(Consulter un profil) as uc11
+(Envoyer un message) as uc12
+(S'abonner) as uc13
+(Consulter les musique d'un artiste) as uc14
+(Se connecter) as uc10
+(S'inscrire) as uc15
+(Se déconnecter) as uc16
+(Ajouter une publication) as uc17
+(Ajouter une musique) as uc18
+(Ajouter un titre) as uc19
+(Ajouter une description) as uc20
+(Créer une playlist) as uc21
+:Administrateur: --> (Gérer les comptes)
+}
+
+:Utilisateur: --> uc1
+:Utilisateur: --> uc22
+:Utilisateur: --> uc8
+:Utilisateur: --> uc9
+:Utilisateur: --> uc10
+:Utilisateur: --> uc11
+:Utilisateur: --> uc15
+:Utilisateur: --> uc16
+:Utilisateur: --> uc17
+:Utilisateur: --> uc21
+
+uc1 ..> (uc2) : <<extends>>
+uc1 ..> (uc3) : <<extends>>
+uc1 ..> (uc4) : <<extends>>
+uc22 ..> (uc5) : <<extends>>
+uc22 ..> (uc6) : <<extends>>
+uc22 ..> (uc7) : <<extends>>
+uc11 ..> (uc12) : <<extends>>
+uc11 ..> (uc14) : <<extends>>
+uc11 ..> (uc13) : <<extends>>
+uc17 <.. uc18 : <<include>>
+uc17 <.. uc19 : <<include>>
+uc17 <.. uc20 : <<include>>
+uc21 <. uc17 : <<include>>
+
+@enduml

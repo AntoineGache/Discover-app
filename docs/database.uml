@@ -1,0 +1,54 @@
+@startuml
+entity Utilisateur {
+  PK id : INT
+  ---
+  * email : VARCHAR
+  * prenom : VARCHAR
+  * nom : VARCHAR
+  * motdepasse : VARCHAR
+}
+
+entity Message {
+  PK id : INT
+  FK envoyeur : INT
+  FK receveur : INT
+  ---
+  * date : DATE
+  * text : VARCHAR
+}
+
+entity Publication {
+  PK id : INT
+  FK publieur : INT
+  ---
+  * text : VARCHAR
+  * son: VARCHAR
+}
+
+entity Commentaire{
+  PK id : INT
+  FK publication : INT
+  FK utilisateur : INT
+  ---
+  * text : VARCHAR
+  * date : DATE
+}
+
+entity Like{
+  PK,FK publication : INT
+  PK,FK utilisateur : INT
+}
+
+entity Abonnement{
+  PK,FK abonné : INT
+  PK,FK abonnement : INT
+}
+
+Utilisateur --> Message
+Utilisateur --> Publication
+Utilisateur --> Commentaire
+Utilisateur --> Like
+Utilisateur --> Abonnement
+Publication --> Commentaire
+Publication --> Like
+@enduml

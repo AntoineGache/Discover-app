@@ -1,0 +1,10 @@
+{% extends "home.html" %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'postfeed.css' %} ">
+{% block title %} Flux de publication {% endblock %}
+
+{% block content %}
+    <h1> Flux de publication </h1>
+    {% include 'publication/publication.html' %}
+{% endblock %}
