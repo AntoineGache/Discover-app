@@ -31,14 +31,13 @@
             <a href="{% url 'Account:account' %}">Account</a>
         </div>
     </div>
-    <div>
+    <div class="logout">
         {% if user.is_authenticated %}
-        <div>
-            <form action="{% url 'ConnexionSystem:signout' %}" id="logout" method="POST">
-                {% csrf_token %}
-                {{ user.get_username }} <button type="submit">Logout</button>
-            </form>
-        </div>
+        {{ user.get_username }}
+        <form action="{% url 'ConnexionSystem:signout' %}" id="logout" method="POST">
+            {% csrf_token %}
+             <button type="submit">Logout</button>
+        </form>
         {% endif %}
     </div>
 </div>

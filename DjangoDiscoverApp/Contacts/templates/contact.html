@@ -1,7 +1,44 @@
 {% extends "home.html" %}
 
 {% block title %} Parameters {% endblock %}
-
 {% block content %}
-    <h1>Contact page</h1>
+    <div id="wrapper">
+        {% load static %}
+        <script>
+            const wrapper = document.getElementById('wrapper');
+
+            wrapper.addEventListener('click', (event) => {
+                const isButton = event.target.nodeName === 'BUTTON';
+                if (!isButton) {
+                    return;
+                }
+                
+                console.log(event.target.id)
+
+                fetch("{% url 'Contact:getMessage' %}", {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRFToken': '{{ csrf_token }}', // Inclure le jeton CSRF pour la sécurité
+                    },
+                    body: JSON.stringify({
+                        "test": "re"
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Traiter la réponse ici
+                    console.log(data);
+                    // Mettre à jour le contenu de la page si nécessaire
+                })
+                .catch(error => console.error(error));
+            });
+        </script>
+                
+        <h3>Vous suivez</h3>
+        <br />
+        {% for elem in list_user %}
+            <br />
+            <button id=`{{ elem }}`>{{ elem }}</button>
+        {% endfor %}
+    </div>
 {% endblock %}
