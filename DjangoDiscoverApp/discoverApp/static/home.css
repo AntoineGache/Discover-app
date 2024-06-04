@@ -2,6 +2,7 @@
 
 html {
     height: 100%;
+    overflow: hidden;
 }
 
 body {
@@ -34,9 +35,11 @@ body {
 
 .body-content {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     width: 80%;
     background-color: var(--background-grey);
+    padding: 64px;
+    overflow: scroll;
 }
 
 .img-text {
@@ -45,4 +48,5 @@ body {
     justify-content: center;
     color: #36E285;
     font-size: larger;
+    font-weight: bold;
 }
