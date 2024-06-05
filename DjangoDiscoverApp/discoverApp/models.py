@@ -20,8 +20,7 @@ class Publication(models.Model):
 	@property
 	def commentaires_count(self):
 		return self.commentaire_set.count()
-
-
+  
 class Message(models.Model):
 	id = models.PositiveIntegerField(primary_key=True)
 	envoyeur = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='envoyeur', on_delete=models.CASCADE)
@@ -47,7 +46,6 @@ class Commentaire(models.Model):
 class Like(models.Model):
 	publication = models.ForeignKey(Publication, on_delete=models.CASCADE)
 	utilisateur = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-
 
 class Abonnement(models.Model):
 	abonne = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='abonne', on_delete=models.CASCADE)
