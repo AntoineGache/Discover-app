@@ -3,15 +3,16 @@
 a {
     display: grid;
     align-items: center;
-    margin-left: 15px;
+    margin-left: 32px;
     width: 100%;
     height: 100%;
-    color: black;
+    color: var(--black3);
 }
 
-a:link 
-{ 
- text-decoration:none; 
+a:link {
+    text-decoration:none;
+    font-size: 14px;
+    font-weight: bold;
 } 
 
 .logout {
@@ -21,10 +22,11 @@ a:link
 
 .url {
     display: flex;
-    height: 37px;
+    height: 54px;
     align-items: center;
-    border-radius: 7px;
-    background-color: var(--background-grey);
+    border-radius: 8px;
+    margin-bottom: 24px;
+    background-color: var(--grey1);
 }
 
 .links {
