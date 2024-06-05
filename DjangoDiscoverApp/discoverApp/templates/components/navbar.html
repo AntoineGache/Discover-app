@@ -31,6 +31,9 @@
             <a href="{% url 'Account:account' %}">Account</a>
         </div>
     </div>
+    <div style="flex-grow: 1;">
+
+    </div>
     <div class="logout">
         {% if user.is_authenticated %}
         {{ user.get_username }}

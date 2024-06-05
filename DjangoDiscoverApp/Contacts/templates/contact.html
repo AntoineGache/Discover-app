@@ -21,7 +21,7 @@
                         'X-CSRFToken': '{{ csrf_token }}', // Inclure le jeton CSRF pour la sécurité
                     },
                     body: JSON.stringify({
-                        "test": "re"
+                        "abonnement": event.target.id
                     })
                 })
                 .then(response => response.json())
